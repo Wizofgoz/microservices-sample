@@ -1,4 +1,4 @@
-// shippy-service-consignment/main.go
+// microservices-sample/consignment-service/main.go
 package main
 
 import (
@@ -8,7 +8,7 @@ import (
 	"sync"
 
 	// Import the generated protobuf code
-	pb "github.com/Wizofgoz/microservices-sample/proto/consignment"
+	pb "github.com/wizofgoz/microservices-sample/consignment-service/proto/consignment"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

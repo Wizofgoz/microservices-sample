@@ -6,12 +6,13 @@ FROM golang:alpine as builder
 RUN apk --no-cache add git
 
 # Set our workdir to our current service in the gopath
-WORKDIR /app/microservices-service-consignment
+WORKDIR /go/src/github.com/wizofgoz/microservices-sample/consignment-service
 
 # Copy the current code into our workdir
 COPY . .
 
-RUN go mod download
+RUN go get -u github.com/golang/dep/cmd/dep
+RUN dep init && dep ensure
 
 # Build the binary, with a few flags which will allow
 # us to run this binary in Alpine.
@@ -33,7 +34,7 @@ WORKDIR /app
 # we pull the binary from the container named `builder`, within
 # this build context. This reaches into our previous image, finds
 # the binary we built, and pulls it into this container. Amazing!
-COPY --from=builder /app/microservices-service-consignment/microservices-service-consignment .
+COPY --from=builder /go/src/github.com/wizofgoz/microservices-sample/consignment-service .
 
 # Run the binary as per usual! This time with a binary build in a
 # separate container, with all of the correct dependencies and

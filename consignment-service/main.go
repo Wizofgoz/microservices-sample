@@ -8,7 +8,7 @@ import (
 	"sync"
 
 	// Import the generated protobuf code
-	pb "github.com/Wizofgoz/MicroservicesSample/proto/consignment"
+	pb "github.com/Wizofgoz/microservices-sample/proto/consignment"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

@@ -11,12 +11,11 @@ import (
 	"os"
 )
 
-
 func main() {
 	cmd.Init()
 
 	// Create new greeter client
-	client := pb.NewUserServiceClient("go.micro.srv.user", microclient.DefaultClient)
+	client := pb.NewUserServiceClient("microservices.service.user", microclient.DefaultClient)
 
 	// Define our flags
 	service := micro.NewService(

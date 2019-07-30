@@ -1,15 +1,14 @@
-// shippy-cli-consignment/main.go
 package main
 
 import (
 	"encoding/json"
+	microclient "github.com/micro/go-micro/client"
+	"github.com/micro/go-micro/cmd"
+	pb "github.com/wizofgoz/microservices-sample/consignment-service/proto/consignment"
+	"golang.org/x/net/context"
 	"io/ioutil"
 	"log"
 	"os"
-	pb "github.com/wizofgoz/microservices-sample/consignment-service/proto/consignment"
-	microclient "github.com/micro/go-micro/client"
-	"github.com/micro/go-micro/cmd"
-	"golang.org/x/net/context"
 )
 
 const (
